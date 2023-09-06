@@ -45,9 +45,20 @@ The code is as followed.
 
 1111 0000 0010 0101; halt
 
-0001 010 010 1 00001; set the flat to 1
+0001 010 010 1 00001; set the flag to 1
 0000 111 111111101; jump to line 28
 ```
 
-### 2.3 Q&A
+### 3 Q & A
 
+> Q: How to find out there is three consecutive 1's
+
+​	 A: Use the counter R4. If the number is 1, we plus 1 to it. If it's 0, we initialize it to 0. When the value of R4 equals 3, we find three consecutive 1's.
+
+> Q:  How can we know we have accomplished the iteration?
+
+​	 A: We check the value of R3. If it equals 0, it means the 1 in this value has been iterated from the far right to the far left. In this situation, we know we have accomplished the iteration.
+
+> Q: How do we know if a certain bit in the given string of numbers is 1?
+
+​	 A: We use the AND instruction to R3 and the given string of numbers. Because the only 1 in R3 is traversed from the far right to the far left, the results of this AND operation show whether this is 1 or not.
